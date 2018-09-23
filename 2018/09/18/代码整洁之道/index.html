@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>cozelight</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="iOS, Algorithms" />
+  
+
+  <meta name="description" content="代码整洁之道 前言抛砖引玉，更详细内容还是在《代码整洁之道》一书中，本文摘自其中部分内容。注意，只是部分内容！如书中所言，学习整洁代码很难，它可不至于要求你掌握原则和模式。你得在这上面花功夫。你须自行实践，且体验自己的失败。你须观察他人的实践与失败。阅读代码——大量代码。而且你要去琢磨某段代码好在什么地方，坏在什么地方。最后强烈建议大家都去认真阅读《代码整洁之道》 一、有意义的命名 推荐网站：CO">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cozelight">
+<meta property="og:url" content="http://cozelight.com/2018/09/18/代码整洁之道/index.html">
+<meta property="og:site_name" content="cozelight">
+<meta property="og:description" content="代码整洁之道 前言抛砖引玉，更详细内容还是在《代码整洁之道》一书中，本文摘自其中部分内容。注意，只是部分内容！如书中所言，学习整洁代码很难，它可不至于要求你掌握原则和模式。你得在这上面花功夫。你须自行实践，且体验自己的失败。你须观察他人的实践与失败。阅读代码——大量代码。而且你要去琢磨某段代码好在什么地方，坏在什么地方。最后强烈建议大家都去认真阅读《代码整洁之道》 一、有意义的命名 推荐网站：CO">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://cozelight.com/2018/09/18/代码整洁之道/wtfm.jpg">
+<meta property="og:image" content="http://cozelight.com/2018/09/18/代码整洁之道/WX20180919-113215@2x.png">
+<meta property="og:updated_time" content="2018-09-23T13:37:44.931Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cozelight">
+<meta name="twitter:description" content="代码整洁之道 前言抛砖引玉，更详细内容还是在《代码整洁之道》一书中，本文摘自其中部分内容。注意，只是部分内容！如书中所言，学习整洁代码很难，它可不至于要求你掌握原则和模式。你得在这上面花功夫。你须自行实践，且体验自己的失败。你须观察他人的实践与失败。阅读代码——大量代码。而且你要去琢磨某段代码好在什么地方，坏在什么地方。最后强烈建议大家都去认真阅读《代码整洁之道》 一、有意义的命名 推荐网站：CO">
+<meta name="twitter:image" content="http://cozelight.com/2018/09/18/代码整洁之道/wtfm.jpg">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cben" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码整洁之道"><span class="toc-text">代码整洁之道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、有意义的命名"><span class="toc-text">一、有意义的命名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-名副其实"><span class="toc-text">1. 名副其实</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-使用可搜索的名称"><span class="toc-text">2. 使用可搜索的名称</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、函数"><span class="toc-text">二、函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、注释"><span class="toc-text">三、注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、单元测试"><span class="toc-text">四、单元测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、类"><span class="toc-text">五、类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、迭代"><span class="toc-text">六、迭代</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-代码整洁之道" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">(no title)</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.09.18</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Gan</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https:///cozelight.github.io/2018/09/18/代码整洁之道/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3 id="代码整洁之道"><a href="#代码整洁之道" class="headerlink" title="代码整洁之道"></a>代码整洁之道</h3><p><img src="./wtfm.jpg" alt="wtfm"></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>抛砖引玉，更详细内容还是在《代码整洁之道》一书中，本文摘自其中部分内容。<strong>注意，只是部分内容！</strong>如书中所言，学习整洁代码很难，它可不至于要求你掌握原则和模式。你得在这上面花功夫。你须自行实践，且体验自己的失败。你须观察他人的实践与失败。阅读代码——大量代码。而且你要去琢磨某段代码好在什么地方，坏在什么地方。最后强烈建议大家都去认真阅读《代码整洁之道》</p>
+<h3 id="一、有意义的命名"><a href="#一、有意义的命名" class="headerlink" title="一、有意义的命名"></a>一、有意义的命名</h3><p><img src="./WX20180919-113215@2x.png" alt="WX20180919-113215@2x"></p>
+<p>推荐网站：<a href="http://unbug.github.io/codelf/" target="_blank" rel="noopener">CODEIF</a></p>
+<h4 id="1-名副其实"><a href="#1-名副其实" class="headerlink" title="1. 名副其实"></a>1. 名副其实</h4><p>如果名称需要注释来补充，那就不算是名副其实</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;<span class="keyword">int</span> []&gt; getThem() &#123;</span><br><span class="line">    List&lt;<span class="keyword">int</span> []&gt; list1 = <span class="keyword">new</span> ArrayList&lt;<span class="keyword">int</span> []&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] x : theList)</span><br><span class="line">        <span class="keyword">if</span> (x[<span class="number">0</span>] == <span class="number">4</span>) </span><br><span class="line">            list1.add(x);</span><br><span class="line">   	<span class="keyword">return</span> list1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>问题不在于代码的简洁度，而是在于代码的<strong>模糊度</strong>：即上下文在代码中未被明确体现的程度。上例代码要求我们了解类似以下问题的答案：</p>
+<ul>
+<li><code>theList</code> 中是什么类型的东西？</li>
+<li><code>theList</code> 零下标条目的意义是什么？</li>
+<li>值 4 的意义是什么？</li>
+<li>我怎么使用返回的列表？</li>
+</ul>
+<p>问题的答案没体现在代码段中，可那就是它们该在的地方。比方说，我们再开发一种扫雷游戏，我们发现，盘面是名为 <code>theList</code> 的单元格列表，那就将其名称改为 <code>gameBoard</code></p>
+<p>盘面上每个单元格都用一个简单数组表示。我们还发现，零下标条目是一种状态值，而该种状态值为 4 表示“已标记”。只要改为有意义的名称，代码就会得到相当程度的改进：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;<span class="keyword">int</span> []&gt; getFlaggedCells() &#123;</span><br><span class="line">    List&lt;<span class="keyword">int</span> []&gt; flaggedCells = <span class="keyword">new</span> ArrayList&lt;<span class="keyword">int</span> []&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] cell : gameBoard)</span><br><span class="line">        <span class="keyword">if</span> (cell[STATUS_VALUE] == FLAGGED) </span><br><span class="line">            flaggedCells.add(cell);</span><br><span class="line">   	<span class="keyword">return</span> flaggedCells;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还可以更进一步，不用 int 数组表示单元格，而是另写一个类。该类包括一个名副其实的函数(成为 <code>isFlagged</code> )，从而掩盖住那个魔法数字：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Cell&gt; <span class="title">getFlaggedCells</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    List&lt;Cell&gt; flaggedCells = <span class="keyword">new</span> ArrayList&lt;Cell&gt;();</span><br><span class="line">    <span class="keyword">for</span> (Cell cell : gameBoard)</span><br><span class="line">        <span class="keyword">if</span> (cell.isFlagged()) </span><br><span class="line">            flaggedCells.add(cell);</span><br><span class="line">   	<span class="keyword">return</span> flaggedCells;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-使用可搜索的名称"><a href="#2-使用可搜索的名称" class="headerlink" title="2. 使用可搜索的名称"></a>2. 使用可搜索的名称</h4><p>单字母名称和数字常量有个问题，就是很难在一大篇文字中找出来。</p>
+<p>找 <code>MAX_CLASSES_PER_STUDENT</code> 很容易，但想找数字 7 就麻烦了，它可能是某些文件名或其它常量定义的一部分。如果该常量是个长数字，又被人错改过，就会逃过搜索，从而造成错误。</p>
+<p>单字母名称仅用于短方法中的本地变量。名称长短应与其作用域大小相对应。若变量或常量可能在代码中多处使用，则应赋予其便于搜索的名称。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">34</span>; j++) &#123;</span><br><span class="line">    s += (t[j]*<span class="number">4</span>)/<span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> realDaysPerIdealDay = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> WORK_DAYS_PER_WEEK = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j &lt; NUMBER_OF_TASKS; j++) &#123;</span><br><span class="line">    <span class="keyword">int</span> realTaskDays = taskEstimate[j] * realDaysPerIdealDay;</span><br><span class="line">    <span class="keyword">int</span> realTaskWeeks = (realTaskDays / WORK_DAYS_PER_WEEK);</span><br><span class="line">    sum += realTaskWeeks;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码中的<code>sum</code>并非特别有用的名称，不过它至少搜索得到。采用能表达意图的名称，貌似拉长了函数代码，但要想想看，<code>WORK_DAYS_PER_WEEK</code> 要比数字 5 好找得多。</p>
+<h3 id="二、函数"><a href="#二、函数" class="headerlink" title="二、函数"></a>二、函数</h3><ol>
+<li><p>短小</p>
+<p>函数的第一规则是要短小，第二条规则是还要更短小。</p>
+</li>
+<li><p>只做一件事</p>
+<p>函数应该做一件事，做好这件事，只做这一件事。</p>
+</li>
+<li><p>函数参数</p>
+<p>最理想的参数数量是 0，其次是 1，再次是 2</p>
+<p>参数不易对付，它们带有太多概念性。从测试的角度看，要编写能确保参数的各种组合运行正常的测试用例，是多么困难的事。</p>
+<p>如果函数看来需要三个或三个以上参数，就说明其中一些参数应该封装为类了。</p>
+</li>
+<li><p>无副作用</p>
+<p>副作用是一种谎言。函数承诺只做一件事，但还是会做其他被藏起来的事。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserValidator</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Cryptographer cryptographer;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkPassword</span><span class="params">(String userName, String password)</span> </span>&#123;</span><br><span class="line">        User user = UserGateway.findByName(userName);</span><br><span class="line">        <span class="keyword">if</span> (user != User.NULL) &#123;</span><br><span class="line">            String codedPhrase = user.getPhraseEncodedByPassword();</span><br><span class="line">            String phrase = cryptographer.decrypt(codedPhrase, password);</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">"Valid Password"</span>.equals(phrase)) &#123;</span><br><span class="line">                Session.initialize();</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然了，副作用就在于对<code>Session.initialize()</code>的调用。<code>checkPassword</code>函数，顾名思义，就是用来检查密码的。该名称并未暗示它会初始化该次会话。所以，当某个误信了函数名的调用者想要检查用户有效性时，就得冒抹除现有会话数据的风险。可以重命名函数为<code>checkPasswordAndInitializeSession</code>，虽然那还是违反了“只做一件事”的规则。</p>
+</li>
+<li><p>分隔指令与询问</p>
+<p>函数要么做什么事，要么回答什么事，但二者不可得兼。函数应该修改某对象的状态，或是返回该对象的有关信息。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">set</span><span class="params">(String attribute, String value)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (set(<span class="string">"username"</span>, <span class="string">"Lucy"</span>)) ...</span><br></pre></td></tr></table></figure>
+<p>它是在问<code>username</code>属性值是否之前已设置为<code>Lucy</code>吗？或者它是在问<code>username</code>属性值是否成功设置为<code>Lucy</code>呢？要解决这个问题，可以将<code>set</code>函数重命名为<code>setAndCheckIfExists</code>，但这对提高if语句的可读性帮助不大。真正的解决方案是把指令与询问分隔开来，防止混淆的发生：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (attributeExists(<span class="string">"username"</span>)) &#123;</span><br><span class="line">    setAttribute(<span class="string">"username"</span>, <span class="string">"Lucy"</span>);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>别重复自己</p>
+<p>重复可能是软件中一切邪恶的根源。许多原则与实践规则都是为控制与消除重复而创建。面向对象编程是如何将代码集中到基类，从而避免冗余。面向切面编程、面向组件编程多少都是消除重复的一种策略。</p>
+</li>
+</ol>
+<p><strong>总结：</strong></p>
+<blockquote>
+<p>写函数时，一开始都冗长而复杂。有太多缩进和嵌套循环。有过长的参数列表。名称是随意取的，也会有重复代码。不过一定会配上一套单元测试，覆盖每行丑陋的代码。</p>
+<p>然后开始打磨这些代码，分解函数，修改名称，消除重复。缩短和重新安置方法。有时还会拆散类。同时保证测试通过。</p>
+<p>并不是从一开始就按规则写函数，没有人可以做到。</p>
+</blockquote>
+<h3 id="三、注释"><a href="#三、注释" class="headerlink" title="三、注释"></a>三、注释</h3><p>什么也比不上放置良好的注释来得有用。什么也不会比乱七八糟的注释更有本事搞乱一个模块。什么也不会比陈旧、提供错误信息的注释更有破坏性。若编程语言足够有表达力，或者我们长于用这些语言来表达意图，就不那么需要注释——也许根本不需要。</p>
+<p>为什么要极力贬低注释？因为注释会撒谎。也不是说总是如此或有意如此，但出现得实在太频繁。注释存在时间越长，就离其所描述的代码越远，越来越变得全然错误。原因很简单，程序员不能坚持维护注释。</p>
+<p>程序员应当负责将注释保持在可维护、有关联、精确的高度。我同意这种说法。但我更主张把力气用在写清楚代码上，直接保证无须编写注释。</p>
+<p>不准确的注释要比没注释坏得多。它们满口胡言。它们预期的东西永不能实现。它们设定了无需也不应再遵循的旧规则。</p>
+<p>真实只在一处地方有：代码。只有代码能忠实地告诉你它做的事。那是唯一真正准确的信息来源。所以，尽管有时也需要注释，我们也该多花心思尽量减少注释量。</p>
+<h3 id="四、单元测试"><a href="#四、单元测试" class="headerlink" title="四、单元测试"></a>四、单元测试</h3><ol>
+<li><p>TDD三定律</p>
+<p>谁都知道TDD要求我们在编写生产代码前先编写单元测试。但这条规则只是冰山之巅。看看下列三定律：</p>
+<ul>
+<li>定律一　在编写不能通过的单元测试前，不可编写生产代码。</li>
+<li>定律二　只可编写刚好无法通过的单元测试，不能编译也算不通过。</li>
+<li>定律三　只可编写刚好足以通过当前失败测试的生产代码。</li>
+</ul>
+<p>这三条定律将你限制在大概30秒一个的循环中。测试与生产代码一起编写，测试只比生产代码早写几秒钟。这样写程序，我们每天就会编写数十个测试，每个月编写数百个测试，每年编写数千个测试。这样写程序，测试将覆盖所有生产代码。测试代码量足以匹敌生产代码量，导致令人生畏的管理问题。</p>
+</li>
+<li><p>保持测试整洁</p>
+<p>整洁的测试有什么要素？有三个要素：可读性，可读性和可读性。在单元测试中，可读性甚至比在生产代码中还重要。测试如何才能做到可读？和其他代码中一样：明确，简洁，还有足够的表达力。在测试中，你要以尽可能少的文字表达大量内容。</p>
+</li>
+<li><p>F.I.R.S.T</p>
+<ul>
+<li>快速（Fast）测试应该够快。测试应该能快速运行。测试运行缓慢，你就不会想要频繁地运行它。如果你不频繁运行测试，就不能尽早发现问题，也无法轻易修正，从而也不能轻而易举地清理代码。最终，代码就会腐坏。</li>
+<li>独立（Independent）测试应该相互独立。某个测试不应为下一个测试设定条件。你应该可以单独运行每个测试，及以任何顺序运行测试。当测试互相依赖时，头一个没通过就会导致一连串的测试失败，使问题诊断变得困难，隐藏了下级错误。</li>
+<li>可重复（Repeatable）测试应当可在任何环境中重复通过。你应该能够在生产环境、测试环境中运行测试，也能够在无网络的列车上用笔记本电脑运行测试。如果测试不能在任意环境中重复，你就总会有个解释其失败的借口。当环境条件不具备时，你也会无法运行测试。</li>
+<li>自足验证（Self-Validating）测试应该有布尔值输出。无论是通过或失败，你不应该查看日志文件来确认测试是否通过。你不应该手工对比两个不同文本文件来确认测试是否通过。如果测试不能自足验证，对失败的判断就会变得依赖主观，而运行测试也需要更长的手工操作时间。</li>
+<li>及时（Timely）测试应及时编写。单元测试应该恰好在使其通过的生产代码之前编写。如果在编写生产代码之后编写测试，你会发现生产代码难以测试。你可能会认为某些生产代码本身难以测试。你可能不会去设计可测试的代码。</li>
+</ul>
+</li>
+</ol>
+<h3 id="五、类"><a href="#五、类" class="headerlink" title="五、类"></a>五、类</h3><ol>
+<li><p>单一权责原则（SRP）</p>
+<p>类或模块应有且只有一条加以修改的理由。</p>
+<p>让软件能工作和让软件保持整洁，是两种截然不同的工作。我们中的大多数人脑力有限，只能更多地精力放在让代码能工作上，而不是放在保持代码有组织和整洁上。分而治之，其在编程行为中的重要程度等同于在程序中的重要程度。</p>
+<p>许多开发者害怕数量巨大的短小单一目的的类会导致难以一目了然抓住全局。然而，有大量短小类的系统并不比有少量庞大类的系统拥有更多移动部件，其数量大致相等。</p>
+<p>问题是：你是想把工作归置到有许多抽屉、每个抽屉中装有定义和标记良好的组件的工具箱中呢，还是想要少数几个能随便把所有东西扔进去的抽屉？</p>
+</li>
+<li><p>内聚</p>
+<p>类应该只有少量实体变量。类中的每个方法都应该操作一个或多个这种变量。通常而言，方法操作的变量越多，就越黏聚到类上。如果一个类中的每个变量都被每个方法所使用，则该类具有最大的内聚性。</p>
+<p>一般来说，创建这种极大化内聚类是既不可取也不可能的；另一方面，我们希望内聚性保持在较高位置。内聚性高，意味着类中的方法和变量互相依赖、互相结合成一个逻辑整体。</p>
+<p>保持内聚性就会得到许多短小的类</p>
+</li>
+</ol>
+<p>Talk is cheap, show me the code</p>
+<p>你可能注意到的第一件事就是程序比原来长了许多，从1页多增加到了将近3页。这有几个原因。其一，重构后的程序采用了更长、更有描述性的变量名。其二，重构后的程序将函数和类声明当作是给代码添加注释的一种手段。其三，我们采用了空格和格式技巧让程序更可读。</p>
+<p>留意程序是如何被拆分为3个主要权责的。<code>PrimePrinter</code>类中只有主程序。主程序的权责是处理执行环境。如果调用方式改变，它也会随之改变</p>
+<p><code>RowColumnPagePrinter</code>类懂得如何将数字列表格式化到有着固定行、列数的页面上。若输出格式需要改动，则该类也会被影响到。</p>
+<p><code>PrimeGenerator</code>类懂得如何生成素数列表。注意，这并不意味着要实体化为对象。该类就是个有用的作用域，在其中声明并隐藏变量。如果计算素数的算法发生改动，则该类也会改动。</p>
+<h3 id="六、迭代"><a href="#六、迭代" class="headerlink" title="六、迭代"></a>六、迭代</h3><p>“一开始就做对系统”纯属神话，反之，我们应该只去实现今天的用户故事，然后重构，明天再扩展系统、实现新的用户故事。这就是迭代和增量敏捷的精髓所在。测试驱动开发、重构以及它们打造出的整洁代码，在代码层面保证了这个过程的实现。</p>
+<p><strong>简单设计</strong>的四条规则，对于创建具有良好设计的软件有着莫大的帮助。</p>
+<ul>
+<li>运行所有测试；</li>
+<li>不可重复；</li>
+<li>表达了程序员的意图；</li>
+<li>尽可能减少类和方法的数量；</li>
+</ul>
+<p><strong>以上规则按其重要程度排列</strong></p>
+<p>全面测试并持续通过所有测试的系统，就是可测试的系统。看似浅显，但却重要。</p>
+<p>只要系统可测试，就会导向保持类短小且目的单一的设计方案。测试编写得越多，就越能持续走向编写较易测试的代码。所以，确保系统完全可测试能帮助我们创建更好的设计。</p>
+<p>紧耦合的代码难以编写测试。同样，编写测试越多，就越会使用依赖注入、接口和抽象等工具尽可能减少耦合。如此一来，设计就有长足进步。</p>
+<p>遵循有关编写测试并持续运行测试的简单、明确的规则，系统就会更贴近低耦合度、高内聚度的目标。编写测试以引致更好的设计。</p>
+<p>有了测试，就能保持代码和类的整洁，方法就是递增式地重构代码。添加了几行代码后，就要暂停，琢磨一下变化了的设计。设计退步了吗？如果是，就要清理它，并且运行测试，保证没有破坏任何东西。测试消除了对清理代码就会破坏代码的恐惧。</p>
+<p>在重构过程中，可以应用有关优秀软件设计的一切知识。提升内聚性，降低耦合度，切分关注面，模块化系统性关注面，缩小函数和类的尺寸，选用更好的名称，如此等等。这也是应用简单设计后三条规则的地方：消除重复，保证表达力，尽可能减少类和方法的数量。</p>
+<p>为了保持类和函数短小，我们可能会造出太多的细小类和方法。所以这条规则也主张函数和类的数量要少。</p>
+<p>类和方法的数量太多，有时是由毫无意义的教条主义导致的。例如，某个编码标准就坚称应当为每个类创建接口。也有开发者认为，字段和行为必须切分到数据类和行为类中。应该抵制这类教条，采用更实用的手段。</p>
+<p>我们的目标是在保持函数和类短小的同时，保持整个系统短小精悍。不过要记住，这在关于简单设计的四条规则里面是优先级最低的一条。所以，尽管使类和函数的数量尽量少是很重要的，但更重要的却是测试、消除重复和表达力。</p>
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/07/28/hello-world/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+
+   
+      <div class="git"></div>
+   
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'cozelight';
+    
+    var disqus_url = 'http://cozelight.com/2018/09/18/代码整洁之道/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//cozelight.disqus.com/count.js" async></script>
+
+
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
