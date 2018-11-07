@@ -22,14 +22,14 @@
 <meta property="og:site_name" content="cozelight">
 <meta property="og:description" content="前言Hybrid 作为一种混合开发模式，依赖 Native 端的 Web 容器（UIWebView / WKWebView），上层使用 H5、JS 做业务开发。这种开发模式，非常有利于办公协同APP的开放平台搭建，由 Native 端提供API，供第三方使用开发、快速迭代。 Hybrid APP 框架一个完整的 Hybrid APP 框架主要包括 Manager、WebView 、Bridge、C">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://o8anxf7e1.bkt.clouddn.com/Hybrid%E6%A1%86%E6%9E%B6.png">
-<meta property="og:image" content="http://o8anxf7e1.bkt.clouddn.com/%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94.png">
-<meta property="og:image" content="http://o8anxf7e1.bkt.clouddn.com/bridge%E6%B5%81%E7%A8%8B.png">
-<meta property="og:updated_time" content="2018-11-07T12:42:46.411Z">
+<meta property="og:image" content="https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/Hybrid%E6%A1%86%E6%9E%B6.png">
+<meta property="og:image" content="https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94.png">
+<meta property="og:image" content="https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/bridge%E6%B5%81%E7%A8%8B.png">
+<meta property="og:updated_time" content="2018-11-07T12:50:55.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS端Hybrid框架搭建">
 <meta name="twitter:description" content="前言Hybrid 作为一种混合开发模式，依赖 Native 端的 Web 容器（UIWebView / WKWebView），上层使用 H5、JS 做业务开发。这种开发模式，非常有利于办公协同APP的开放平台搭建，由 Native 端提供API，供第三方使用开发、快速迭代。 Hybrid APP 框架一个完整的 Hybrid APP 框架主要包括 Manager、WebView 、Bridge、C">
-<meta name="twitter:image" content="http://o8anxf7e1.bkt.clouddn.com/Hybrid%E6%A1%86%E6%9E%B6.png">
+<meta name="twitter:image" content="https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/Hybrid%E6%A1%86%E6%9E%B6.png">
 
   
 
@@ -201,7 +201,7 @@
 </li>
 </ul>
 <p>框架结构如下：</p>
-<p><img src="http://o8anxf7e1.bkt.clouddn.com/Hybrid%E6%A1%86%E6%9E%B6.png" alt="Hybrid 框架"></p>
+<p><img src="https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/Hybrid%E6%A1%86%E6%9E%B6.png" alt="Hybrid 框架"></p>
 <h2 id="WebView-容器"><a href="#WebView-容器" class="headerlink" title="WebView 容器"></a>WebView 容器</h2><p>iOS8 以后苹果推出了一套新的 WKWebView，对于 UIWebView 和 WKWebView 的区别，可以参考 <a href="https://mp.weixin.qq.com/s?__biz=MzI1MTE2NTE1Ng==&amp;mid=2649516616&amp;idx=1&amp;sn=c16a7fc0ddaee2a6d5e1ad10373af9e3&amp;chksm=f1efeac3c69863d5942da9ba250c39e29af97a7c1ac22fce49d65dc3967c49c811b0f566b2c6#rd" target="_blank" rel="noopener">教你使用 WKWebView 的正确姿势</a>，本框架暂时选用 WKWebView 作为容器，针对 WKWebView 的问题，本框架做了以下解决方案：</p>
 <h4 id="Cookie-问题"><a href="#Cookie-问题" class="headerlink" title="Cookie 问题"></a>Cookie 问题</h4><p>前端抛弃对 Cookie 的依赖，改为使用 H5 的 Storage 能力。另 Native 提供存读接口，以备前端使用存储功能。</p>
 <h4 id="NSURLProtocol-支持"><a href="#NSURLProtocol-支持" class="headerlink" title="NSURLProtocol 支持"></a>NSURLProtocol 支持</h4><p>WKWebView 包含一个 <code>browsingContextController</code> 属性对象，该对象提供了 <code>registerSchemeForCustomProtocol</code> 和 <code>unregisterSchemeForCustomProtocol</code> 两个方法，能通过注册 scheme 来代理同类请求，符合注册 scheme 类型的请求会走 NSURLProtocol 协议。但是这种方案存在两个严重缺陷：post 请求 body 数据被清空；对 ATS 支持不足。</p>
@@ -209,7 +209,7 @@
 <h4 id="Crash-白屏问题"><a href="#Crash-白屏问题" class="headerlink" title="Crash 白屏问题"></a>Crash 白屏问题</h4><p>在 WKWebView 白屏的时候，<code>webView.title</code> 会被置空，因此，可以在 <code>viewWillAppear</code> 的时候检测 <code>webView.title</code> 是否为空来 reload 页面。</p>
 <h4 id="缓存问题"><a href="#缓存问题" class="headerlink" title="缓存问题"></a>缓存问题</h4><p>针对单个资源文件，可以对该资源地址加时间戳避开缓存。针对全局资源文件，需要手动清理缓存，iOS9 以后，系统提供了缓存管理接口 <code>WKWebsiteDataStore</code>。而 iOS8，只能通过手动删除文件来解决了，WKWebView 的缓存数据会存储在 <code>~/Library/Caches/BundleID/WebKit/</code> 目录下，可通过删除该目录来实现清理缓存。</p>
 <h2 id="Bridge"><a href="#Bridge" class="headerlink" title="Bridge"></a>Bridge</h2><p>由于容器选择是 WKWebView，所以 JS 调用 Native 端有两种方式 <code>URL拦截</code> 和 <code>messageHandler</code> 。下图为两种方式性能对比</p>
-<p><img src="http://o8anxf7e1.bkt.clouddn.com/%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94.png" alt="性能对比"></p>
+<p><img src="https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94.png" alt="性能对比"></p>
 <p><code>messageHandler</code> 对比 <code>URL拦截</code> 性能大约提升了 20%，受益于 WKWebView，本框架采用 <code>messageHandler</code> + <code>evaluatingJavaScript</code> 的方式进行通信交互。</p>
 <h4 id="JS-gt-Native"><a href="#JS-gt-Native" class="headerlink" title="JS -&gt; Native"></a>JS -&gt; Native</h4><h5 id="Native-注入对象"><a href="#Native-注入对象" class="headerlink" title="Native 注入对象"></a>Native 注入对象</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//配置对象注入</span><br><span class="line">[self.webView.configuration.userContentController addScriptMessageHandler:self name:@&quot;nativeObject&quot;];</span><br><span class="line">//移除对象注入</span><br><span class="line">[self.webView.configuration.userContentController removeScriptMessageHandlerForName:@&quot;nativeObject&quot;];</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -229,7 +229,7 @@
 <h4 id="注入时机"><a href="#注入时机" class="headerlink" title="注入时机"></a>注入时机</h4><p>并不是所有前端页面都需要用到 Native 能力，因此在需要用到 Native 能力的页面，才注入 JS 代码，为其提供 Native 能力。与前端约定，如果需要，就假跳转至一个指定的 <code>URL</code>, 然后客户端在代理方法 <code>webView:(WKWebView *)webViewdecidePolicyForNavigationAction:decisionHandler:</code> 里判断 <code>URL</code> 是否为指定的 <code>URL</code>，如果是，则执行注入。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler &#123;</span><br><span class="line">    NSURL *url = navigationAction.request.URL;</span><br><span class="line">    if ([url.absoluteString isEqualToString:@&quot;指定URL&quot;]) &#123;</span><br><span class="line">        // 执行注入 JS 代码</span><br><span class="line">        </span><br><span class="line">        decisionHandler(WKNavigationActionPolicyCancel);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    decisionHandler(WKNavigationActionPolicyAllow);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Bridge-框架"><a href="#Bridge-框架" class="headerlink" title="Bridge 框架"></a>Bridge 框架</h4><p>整个 Native 和 JS 的 Bridge 交互流程如下图所示：</p>
-<p><img src="http://o8anxf7e1.bkt.clouddn.com/bridge%E6%B5%81%E7%A8%8B.png" alt="brdige流程"></p>
+<p><img src="https://cozelight.github.io/images/Hybrid%E6%A1%86%E6%9E%B6/bridge%E6%B5%81%E7%A8%8B.png" alt="brdige流程"></p>
 <p>在 Native / JS 端，创建 Bridge 对象，该对象需包含：</p>
 <h5 id="property"><a href="#property" class="headerlink" title="property"></a>property</h5><ul>
 <li>messageHandlers 字典，以 handlerName 作为 key，保存对应 function</li>

@@ -22,13 +22,13 @@
 <meta property="og:site_name" content="cozelight">
 <meta property="og:description" content="前言抛砖引玉，更详细内容还是在《代码整洁之道》一书中，本文摘自其中部分内容。注意，只是部分内容！如书中所言，学习整洁代码很难，它可不至于要求你掌握原则和模式。你得在这上面花功夫。你须自行实践，且体验自己的失败。你须观察他人的实践与失败。阅读代码——大量代码。而且你要去琢磨某段代码好在什么地方，坏在什么地方。最后强烈建议大家都去认真阅读《代码整洁之道》 一、有意义的命名 推荐网站：CODEIF 1">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://o8anxf7e1.bkt.clouddn.com/wtfm.jpg">
-<meta property="og:image" content="http://o8anxf7e1.bkt.clouddn.com/WX20180919-113215@2x.png">
-<meta property="og:updated_time" content="2018-09-23T14:04:42.496Z">
+<meta property="og:image" content="https://cozelight.github.io/images/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/1541594733018.jpg">
+<meta property="og:image" content="https://cozelight.github.io/images/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/1541594748688.jpg">
+<meta property="og:updated_time" content="2018-11-07T12:49:20.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码整洁之道">
 <meta name="twitter:description" content="前言抛砖引玉，更详细内容还是在《代码整洁之道》一书中，本文摘自其中部分内容。注意，只是部分内容！如书中所言，学习整洁代码很难，它可不至于要求你掌握原则和模式。你得在这上面花功夫。你须自行实践，且体验自己的失败。你须观察他人的实践与失败。阅读代码——大量代码。而且你要去琢磨某段代码好在什么地方，坏在什么地方。最后强烈建议大家都去认真阅读《代码整洁之道》 一、有意义的命名 推荐网站：CODEIF 1">
-<meta name="twitter:image" content="http://o8anxf7e1.bkt.clouddn.com/wtfm.jpg">
+<meta name="twitter:image" content="https://cozelight.github.io/images/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/1541594733018.jpg">
 
   
 
@@ -187,9 +187,9 @@
 
   <div class="article-content">
     
-      <p><img src="http://o8anxf7e1.bkt.clouddn.com/wtfm.jpg" alt="wtfm"></p>
+      <p><img src="https://cozelight.github.io/images/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/1541594733018.jpg" alt="wtfm"></p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>抛砖引玉，更详细内容还是在《<a href="https://www.amazon.cn/dp/B0031M9GHC/ref=sr_1_1?ie=UTF8&amp;qid=1537711434&amp;sr=8-1&amp;keywords=%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93" target="_blank" rel="noopener">代码整洁之道</a>》一书中，本文摘自其中部分内容。<strong>注意，只是部分内容！</strong>如书中所言，学习整洁代码很难，它可不至于要求你掌握原则和模式。你得在这上面花功夫。你须自行实践，且体验自己的失败。你须观察他人的实践与失败。阅读代码——大量代码。而且你要去琢磨某段代码好在什么地方，坏在什么地方。最后强烈建议大家都去认真阅读《<a href="https://www.amazon.cn/dp/B0031M9GHC/ref=sr_1_1?ie=UTF8&amp;qid=1537711434&amp;sr=8-1&amp;keywords=%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93" target="_blank" rel="noopener">代码整洁之道</a>》</p>
-<h3 id="一、有意义的命名"><a href="#一、有意义的命名" class="headerlink" title="一、有意义的命名"></a>一、有意义的命名</h3><p><img src="http://o8anxf7e1.bkt.clouddn.com/WX20180919-113215@2x.png" alt="WX20180919-113215@2x"></p>
+<h3 id="一、有意义的命名"><a href="#一、有意义的命名" class="headerlink" title="一、有意义的命名"></a>一、有意义的命名</h3><p><img src="https://cozelight.github.io/images/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/1541594748688.jpg" alt="1541594733018"></p>
 <p>推荐网站：<a href="http://unbug.github.io/codelf/" target="_blank" rel="noopener">CODEIF</a></p>
 <h4 id="1-名副其实"><a href="#1-名副其实" class="headerlink" title="1. 名副其实"></a>1. 名副其实</h4><p>如果名称需要注释来补充，那就不算是名副其实</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;<span class="keyword">int</span> []&gt; getThem() &#123;</span><br><span class="line">    List&lt;<span class="keyword">int</span> []&gt; list1 = <span class="keyword">new</span> ArrayList&lt;<span class="keyword">int</span> []&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] x : theList)</span><br><span class="line">        <span class="keyword">if</span> (x[<span class="number">0</span>] == <span class="number">4</span>) </span><br><span class="line">            list1.add(x);</span><br><span class="line">   	<span class="keyword">return</span> list1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
